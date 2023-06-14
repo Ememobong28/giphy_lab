@@ -12,7 +12,9 @@ submitBtn.addEventListener("click", async (event) => {
     try {
         const apiKey = "PTLDGsZXmsUjYBOZIu74fBgVj3ytAkOo";
         const searchTerm = searchInput.value;
-        const url = https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchTerm)};
+        console.log(searchTerm)
+        const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchTerm)}`;
+
     
         const response = await fetch(url);
         const data = await response.json();
@@ -30,6 +32,7 @@ submitBtn.addEventListener("click", async (event) => {
         // console.log(data);
     } catch (error) {
         // Handle any errors that occur during the fetch request
+        console.log("failed")
         console.log(error);
     }
 
